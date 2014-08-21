@@ -1,0 +1,38 @@
+Terraria Server v1.2.3.1
+
+Listening on port 6666
+Type 'help' for a list of commands.
+
+TShock Notice: authcode.txt is still present, and the AuthToken located in that
+file will be used.
+To become superadmin, join the game and type /auth 7802667
+This token will display until disabled by verification. (/auth-verify)
+: who
+Server executed: /who.
+Online Players (0/16)
+: who
+Server executed: /who.
+Online Players (0/16)
+: 46.36.30.28:59594 is connecting...
+1namba has joined.
+say 11212
+Server executed: /say 11212.
+(Server Broadcast) 11212
+: 1namba has left.
+
+
+_/:/ \__\:\/__/:/  /  /\/__/\_|:|____
+/__/:/\:\\  \:\/:/~/:/\  \:\/:/__\/\  \:\ /  /:/\  \:\ /  /:/\  \:\/:::::/
+\__\/  \:\\  \::/ /:/  \  \::/      \  \:\  /:/  \  \:\  /:/  \  \::/~~~~
+     \  \:\\__\/ /:/    \  \:\       \  \:\/:/    \  \:\/:/    \  \:\
+      \__\/  /__/:/      \  \:\       \  \::/      \  \::/      \  \:\
+             \__\/        \__\/        \__\/        \__\/        \__\/
+TShock for Terraria is open & free software. If you paid, you were scammed.
+Port overridden by startup argument. Set to 6666
+Startup parameter overrode maximum player slot configuration value.
+|> Version 4.2.2.409 (And the great beast rose from its slumber, ready to take o
+n the world again.) now running.
+AutoSave Enabled
+Backups Disabled
+[Server API] Info Plugin TShock v4.2.2.409 (by The Nyx Team) initiated.
+
