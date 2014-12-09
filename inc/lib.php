@@ -243,13 +243,7 @@ function server_start($name) {
 				json_encode($properties)
 			);
 		}
-		putenv('LANG=en_US.UTF-8');
-		shell_exec(
-			sprintf(
-				KT_SCREEN_DUMPLOG, // Base command
-				$user['home']
-			)
-		);
+putenv('LANG=en_US.UTF-8');
 		// Launch server process in a detached GNU Screen
 		shell_exec(
 			'cd '.escapeshellarg($user['home']).'; '. // Change to server directory
@@ -257,6 +251,7 @@ function server_start($name) {
 				KT_SCREEN_CMD_START, // Base command
 				escapeshellarg(KT_SCREEN_NAME_PREFIX.$user['user']), // Screen Name
 				escapeshellarg(KT_SCREEN_NAME_PREFIX.$user['user']), // Screen Name
+				$user['ip'],  // Ip
 				$user['port'],  // Port
 				$properties['world'],  // WorldFile
 				$user['maxplayers'],  // Maximum players
@@ -264,6 +259,14 @@ function server_start($name) {
 				escapeshellarg(KT_SCREEN_NAME_PREFIX.$user['user']) // Screen Name
 			)
 		);
+
+		shell_exec(
+			sprintf(
+				KT_SCREEN_DUMPLOG, // Base command
+				$user['home']
+			)
+		);
+		
 	}
 }
 
@@ -353,7 +356,7 @@ function server_running($name) {
 ////////////////////
 
 // Add a new user
-function user_add($user,$pass,$role,$home,$maxplayers=16,$port=7777) {
+function user_add($user,$pass,$role,$home,$maxplayers=16,$port=7777,$ip) {
 	
 	// Prevent overwriting an existing user
 	if(is_file('data/users/'.strtolower(clean_alphanum($user))))
@@ -366,7 +369,8 @@ function user_add($user,$pass,$role,$home,$maxplayers=16,$port=7777) {
 		'role' => $role,
 		'home' => rtrim(strtr($home,'\\','/'),'/'),
 		'maxplayers'  => intval($maxplayers),
-		'port' => intval($port)
+		'port' => intval($port),
+		'ip' => $ip
 	);
 	
 	// Write to file

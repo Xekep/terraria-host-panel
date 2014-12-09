@@ -22,7 +22,7 @@ if ($_POST['action'] == 'user-switch' && $_POST['user']) {
 
 // Add new user
 if ($_POST['action'] == 'user-add')
-	user_add($_POST['user'], $_POST['pass'], $_POST['role'], $_POST['dir'], $_POST['maxplayers'], $_POST['port']);
+	user_add($_POST['user'], $_POST['pass'], $_POST['role'], $_POST['dir'], $_POST['maxplayers'], $_POST['port'], $_POST['ip']);
 
 // Start a server
 if ($_POST['action'] == 'server-start') {
@@ -167,6 +167,13 @@ if ($_POST['action'] == 'server-stop')
 					<div class="controls">
 						<input class="span3" type="number" name="port" id="port" value="777">
 						<span class="text-info">0 = No Server</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="ip">Server IP</label>
+
+					<div class="controls">
+						<input class="span3" type="text" name="ip" id="ip" value="<?php echo KT_LOCAL_IP; ?>" pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}">
 					</div>
 				</div>
 				<div class="control-group">

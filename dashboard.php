@@ -246,7 +246,7 @@ if (isset($_SESSION['user'])) {
 					<div class="well">
 						<legend>Server Information</legend>
 						<p><b>Server Status:</b> <span class="label" id="lbl-status">Checking&hellip;</span><br>
-							<b>IP:</b> <?php echo KT_LOCAL_IP . ':' . $user['port']; ?><br>
+							<b>IP:</b> <?php echo $user['ip'] . ':' . $user['port']; ?><br>
 							<b>Max Players:</b> <?php echo $user['maxplayers']; ?><br>
 							<b>Players:</b> <span id="lbl-players">Checking&hellip;</span>
 						</p>
